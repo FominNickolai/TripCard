@@ -57,6 +57,9 @@
                                                             </constraints>
                                                             <color key="tintColor" red="0.95686274510000002" green="0.2210640395" blue="0.1593520216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="heart"/>
+                                                            <connections>
+                                                                <action selector="likeButtonTappedWithSender:" destination="Hp6-pO-UCT" eventType="touchUpInside" id="wlP-qh-2SA"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>

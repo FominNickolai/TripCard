@@ -86,6 +86,7 @@ extension TripViewController: UICollectionViewDataSource {
         cell.priceLabel.text = "$\(String(trips[indexPath.row].price))"
         cell.totalDaysLabel.text = "\(trips[indexPath.row].totalDays) days"
         cell.isLiked = trips[indexPath.row].isLiked
+        cell.delegate = self
         
         //Apply round corner
         cell.layer.cornerRadius = 4.0
@@ -98,6 +99,14 @@ extension TripViewController: UICollectionViewDelegate {
     
 }
 
+extension TripViewController: TripCollectionCellDelegate {
+    func didLikeButtonPressed(cell: TripCollectionViewCell) {
+        if let indexPath = collectionView.indexPath(for: cell) {
+            trips[indexPath.row].isLiked = trips[indexPath.row].isLiked ? false : true
+            cell.isLiked = trips[indexPath.row].isLiked
+        }
+    }
+}
 
 
 
