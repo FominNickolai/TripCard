@@ -14,7 +14,7 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     
-    private var trips = [Trip]()
+    fileprivate var trips = [Trip]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,13 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let flowLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
             flowLayout.itemSize = CGSize(width: 250.0, height: 330.0)
         }
+        
+        //Setup swipe gesture
+        let swipeUpRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(gesture:)))
+        swipeUpRecognizer.direction = .up
+        swipeUpRecognizer.delegate = self
+        self.collectionView.addGestureRecognizer(swipeUpRecognizer)
+        
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -130,7 +137,26 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 }
 
-
+extension TripViewController: UIGestureRecognizerDelegate {
+    func handleSwipe(gesture: UISwipeGestureRecognizer) {
+        let point = gesture.location(in: self.collectionView)
+        if gesture.state == UIGestureRecognizerState.ended {
+            if let indexPath = collectionView.indexPathForItem(at: point) {
+                //Remove trip from Parse, array and collection view
+                trips[indexPath.row].toPFObject().deleteInBackground(block: { (success, error) in
+                    if success {
+                        print("Successfuly removed the trip")
+                    } else {
+                        print("Error: \(error?.localizedDescription ?? "")")
+                        return
+                    }
+                    self.trips.remove(at: indexPath.row)
+                    self.collectionView.deleteItems(at: [indexPath])
+                })
+            }
+        }
+    }
+}
 
 
 
