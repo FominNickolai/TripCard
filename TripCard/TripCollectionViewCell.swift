@@ -15,7 +15,7 @@ class TripCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var totalDaysLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-    
+        
     var isLiked: Bool = false {
         didSet {
             if isLiked {
