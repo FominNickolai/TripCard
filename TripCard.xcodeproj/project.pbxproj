@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B7D6875E1F35B5BE00D2E3F6 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6875D1F35B5BE00D2E3F6 /* TripCollectionViewCell.swift */; };
+		B7D687601F35B6D400D2E3F6 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6875F1F35B6D400D2E3F6 /* Trip.swift */; };
 		F42171A21DD1C03D0093C82D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42171A11DD1C03D0093C82D /* AppDelegate.swift */; };
 		F42171A71DD1C03D0093C82D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42171A51DD1C03D0093C82D /* Main.storyboard */; };
 		F42171A91DD1C03D0093C82D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F42171A81DD1C03D0093C82D /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		B7D6875D1F35B5BE00D2E3F6 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7D6875F1F35B6D400D2E3F6 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		F421719E1DD1C03D0093C82D /* TripCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42171A11DD1C03D0093C82D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F42171A61DD1C03D0093C82D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				F42171AD1DD1C03D0093C82D /* Info.plist */,
 				F42171B31DD1C0540093C82D /* TripViewController.swift */,
 				B7D6875D1F35B5BE00D2E3F6 /* TripCollectionViewCell.swift */,
+				B7D6875F1F35B6D400D2E3F6 /* Trip.swift */,
 			);
 			path = TripCard;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7D687601F35B6D400D2E3F6 /* Trip.swift in Sources */,
 				F42171A21DD1C03D0093C82D /* AppDelegate.swift in Sources */,
 				F42171B41DD1C0540093C82D /* TripViewController.swift in Sources */,
 				B7D6875E1F35B5BE00D2E3F6 /* TripCollectionViewCell.swift in Sources */,
