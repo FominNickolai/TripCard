@@ -36,7 +36,7 @@
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Hp6-pO-UCT">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Hp6-pO-UCT" customClass="TripCollectionViewCell" customModule="TripCard" customModuleProvider="target">
                                         <rect key="frame" x="20" y="25" width="250" height="380"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -108,6 +108,14 @@
                                             <constraint firstItem="vT9-C8-jJA" firstAttribute="leading" secondItem="Hp6-pO-UCT" secondAttribute="leading" id="nA5-vz-LPH"/>
                                             <constraint firstItem="MnB-SB-sNd" firstAttribute="top" secondItem="vT9-C8-jJA" secondAttribute="bottom" id="rNe-Nd-o4M"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="vIB-Gv-Oli" id="aZY-2r-hqQ"/>
+                                            <outlet property="countryLabel" destination="pcf-ui-RgX" id="0e7-Mj-apa"/>
+                                            <outlet property="imageView" destination="vT9-C8-jJA" id="QtY-p0-kJC"/>
+                                            <outlet property="likeButton" destination="JmK-s5-dXv" id="qcG-Kz-UcM"/>
+                                            <outlet property="priceLabel" destination="jW6-KD-PAw" id="wmQ-hV-Win"/>
+                                            <outlet property="totalDaysLabel" destination="7dy-Bc-Oz7" id="rfd-oo-FxV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
