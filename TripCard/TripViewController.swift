@@ -49,6 +49,11 @@ class TripViewController: UIViewController {
         
         collectionView.backgroundColor = .clear
         
+        if UIScreen.main.bounds.size.height == 568.0 {
+            let flowLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+            flowLayout.itemSize = CGSize(width: 250.0, height: 330.0)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
