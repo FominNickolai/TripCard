@@ -87,6 +87,11 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    //Actions
+    @IBAction func reloadButtonTapped(sender: UIButton) {
+        loadTripsFromParse()
+    }
+    
     //Load from Parse
     func loadTripsFromParse() {
         //Clear up the array
@@ -95,6 +100,7 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         //Pull data from Parse
         let query = PFQuery(className: "Trip")
+        query.cachePolicy = PFCachePolicy.networkElseCache
         query.findObjectsInBackground { (objects, error) in
             if let error = error {
                 print("Error: \(error) \(error.localizedDescription)")
