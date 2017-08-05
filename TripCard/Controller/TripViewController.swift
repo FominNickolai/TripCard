@@ -84,6 +84,15 @@ class TripViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if let indexPath = collectionView.indexPath(for: cell) {
             trips[indexPath.row].isLiked = trips[indexPath.row].isLiked ? false : true
             cell.isLiked = trips[indexPath.row].isLiked
+            
+            //Update the trip on Parse
+            trips[indexPath.row].toPFObject().saveInBackground(block: { (success, error) in
+                if success {
+                    print("Successfully updated the trip")
+                } else {
+                    print("Error: \(error?.localizedDescription ?? "")")
+                }
+            })
         }
     }
     
